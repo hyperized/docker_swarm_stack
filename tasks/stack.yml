@@ -1,0 +1,18 @@
+---
+- name: verify inputs
+  assert:
+    that:
+      - stack.name | length
+      - stack.file | length
+
+- name: ensure docker-compose file
+  copy:
+    src: "{{ stack.file }}"
+    dest: "{{ docker_swarm_composer_tmp_path }}/{{ stack.name }}.yml"
+
+- name: enact stack action
+  docker_stack:
+    state: "{{ stack.state | default(docker_swarm_composer_state) }}"
+    name: "{{ stack.name }}"
+    compose:
+      - "{{ docker_swarm_composer_tmp_path }}/{{ stack.name }}.yml"

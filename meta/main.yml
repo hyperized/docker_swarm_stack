@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Gerben Geijteman
+  description: Docker Swarm Composer
+  company: Hyperized.net
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+  galaxy_tags:
+    - docker
+    - swarm
+    - composer
+dependencies:
+  - role: hyperized.pip
+    pip_name: jsondiff

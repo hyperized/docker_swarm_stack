@@ -1,0 +1,7 @@
+---
+docker_swarm_composer_state: present
+docker_swarm_composer_tmp_path: /tmp
+docker_swarm_stack:
+#  - name: default
+#    file: somepath/docker-compose.yml
+#    state: present

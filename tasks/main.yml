@@ -1,0 +1,6 @@
+---
+- name: stacks
+  loop: "{{ docker_swarm_stack }}"
+  loop_control:
+    loop_var: stack
+  include_tasks: stack.yml
